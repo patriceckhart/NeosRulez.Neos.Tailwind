@@ -1,0 +1,13 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        NeosRulez.Neos.Tailwind: true
+    userInterface:
+      inspector:
+        dataTypes:
+          'Neos\Media\Domain\Model\ImageInterface':
+            editorOptions:
+              accept: 'image/png,image/jpeg,image/gif,image/svg+xml'
+              features:
+                resize: false

@@ -1,0 +1,27 @@
+prototype(NeosRulez.Neos.Tailwind:Document.AbstractPage) < prototype(Neos.Neos:Page) {
+
+    htmlTag = Neos.Fusion:Tag {
+        tagName = 'html'
+        omitClosingTag = TRUE
+        attributes {
+            lang.@if.languageDimensionExists = ${true}
+            lang.@if.onlyRenderWhenInLiveWorkspace = ${true}
+        }
+    }
+
+    head {
+        viewport = Neos.Fusion:Component {
+
+            renderer = afx`
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            `
+        }
+    }
+
+    body = NeosRulez.Neos.Tailwind.NodeTypes:Component.DefaultLayout {
+        content = ''
+        @process.replaceQuotationMarks1 = ${String.replace(value, '„', '"')}
+        @process.replaceQuotationMarks2 = ${String.replace(value, '“', '"')}
+    }
+
+}

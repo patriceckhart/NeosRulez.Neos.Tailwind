@@ -1,0 +1,13 @@
+'NeosRulez.Neos.Tailwind:Document.AbstractPage':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: far fa-file
+    inspector:
+      groups:
+        document:
+          icon: far fa-file
+  childNodes:
+    main:
+      type: Neos.Neos:ContentCollection
