@@ -11,10 +11,21 @@ prototype(NeosRulez.Neos.Tailwind:Document.AbstractPage) < prototype(Neos.Neos:P
 
     head {
         viewport = Neos.Fusion:Component {
-
             renderer = afx`
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             `
+        }
+        backendCss = Neos.Fusion:Tag {
+            @position = 'end'
+            tagName = 'link'
+            attributes {
+                media = 'all'
+                rel = 'stylesheet'
+                href = Neos.Fusion:ResourceUri {
+                    path = 'resource://NeosRulez.Neos.Tailwind/Public/backend.css'
+                }
+            }
+            @if.render = ${site.context.inBackend}
         }
     }
 
